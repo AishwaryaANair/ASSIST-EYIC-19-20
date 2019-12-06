@@ -1,0 +1,339 @@
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7250) (preloaded format=pdflatex 2019.12.6)  6 DEC 2019 22:40
+entering extended mode
+**./main.tex
+(main.tex
+LaTeX2e <2019-10-01> patch level 3
+(D:\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2019/10/25 v1.4k Standard LaTeX document class
+(D:\MiKTeX\tex/latex/base\size10.clo
+File: size10.clo 2019/10/25 v1.4k Standard LaTeX file (size option)
+)
+\c@part=\count80
+\c@section=\count81
+\c@subsection=\count82
+\c@subsubsection=\count83
+\c@paragraph=\count84
+\c@subparagraph=\count85
+\c@figure=\count86
+\c@table=\count87
+\abovecaptionskip=\skip41
+\belowcaptionskip=\skip42
+\bibindent=\dimen102
+) (D:\MiKTeX\tex/latex/base\inputenc.sty
+Package: inputenc 2018/08/11 v1.3c Input encoding file
+\inpenc@prehook=\toks14
+\inpenc@posthook=\toks15
+)
+(D:\MiKTeX\tex/latex/graphics\graphicx.sty
+Package: graphicx 2017/06/01 v1.1a Enhanced LaTeX Graphics (DPC,SPQR)
+
+(D:\MiKTeX\tex/latex/graphics\keyval.sty
+Package: keyval 2014/10/28 v1.15 key=value parser (DPC)
+\KV@toks@=\toks16
+)
+(D:\MiKTeX\tex/latex/graphics\graphics.sty
+Package: graphics 2019/11/01 v1.3d Standard LaTeX Graphics (DPC,SPQR)
+
+(D:\MiKTeX\tex/latex/graphics\trig.sty
+Package: trig 2016/01/03 v1.10 sin cos tan (DPC)
+)
+(D:\MiKTeX\tex/latex/graphics-cfg\graphics.cfg
+File: graphics.cfg 2016/06/04 v1.11 sample graphics configuration
+)
+Package graphics Info: Driver file: pdftex.def on input line 105.
+
+(D:\MiKTeX\tex/latex/graphics-def\pdftex.def
+File: pdftex.def 2018/01/08 v1.0l Graphics/color driver for pdftex
+))
+\Gin@req@height=\dimen103
+\Gin@req@width=\dimen104
+)
+(D:\MiKTeX\tex/latex/preprint\authblk.sty
+Package: authblk 2001/02/27 1.3 (PWD)
+\affilsep=\skip43
+\@affilsep=\skip44
+\c@Maxaffil=\count88
+\c@authors=\count89
+\c@affil=\count90
+)
+(D:\MiKTeX\tex/latex/imakeidx\imakeidx.sty
+Package: imakeidx 2016/10/15 v1.3e Package for typesetting indices in a synchro
+nous mode
+
+(D:\MiKTeX\tex/latex/xkeyval\xkeyval.sty
+Package: xkeyval 2014/12/03 v2.7a package option processing (HA)
+
+(D:\MiKTeX\tex/generic/xkeyval\xkeyval.tex
+(D:\MiKTeX\tex/generic/xkeyval\xkvutils.tex
+\XKV@toks=\toks17
+\XKV@tempa@toks=\toks18
+)
+\XKV@depth=\count91
+File: xkeyval.tex 2014/12/03 v2.7a key=value parser (HA)
+))
+(D:\MiKTeX\tex/generic/iftex\ifxetex.sty
+Package: ifxetex 2019/10/25 v0.7 ifxetex legacy package. Use iftex instead.
+ (D:\MiKTeX\tex/generic/iftex\iftex.sty
+Package: iftex 2019/11/07 v1.0c TeX engine tests
+)) (D:\MiKTeX\tex/generic/iftex\ifluatex.sty
+Package: ifluatex 2019/10/25 v1.5 ifluatex legacy package. Use iftex instead.
+)
+(D:\MiKTeX\tex/latex/tools\multicol.sty
+Package: multicol 2019/03/01 v1.8w multicolumn formatting (FMi)
+\c@tracingmulticols=\count92
+\mult@box=\box27
+\multicol@leftmargin=\dimen105
+\c@unbalance=\count93
+\c@collectmore=\count94
+\doublecol@number=\count95
+\multicoltolerance=\count96
+\multicolpretolerance=\count97
+\full@width=\dimen106
+\page@free=\dimen107
+\premulticols=\dimen108
+\postmulticols=\dimen109
+\multicolsep=\skip45
+\multicolbaselineskip=\skip46
+\partial@page=\box28
+\last@line=\box29
+\maxbalancingoverflow=\dimen110
+\mult@rightbox=\box30
+\mult@grightbox=\box31
+\mult@gfirstbox=\box32
+\mult@firstbox=\box33
+\@tempa=\box34
+\@tempa=\box35
+\@tempa=\box36
+\@tempa=\box37
+\@tempa=\box38
+\@tempa=\box39
+\@tempa=\box40
+\@tempa=\box41
+\@tempa=\box42
+\@tempa=\box43
+\@tempa=\box44
+\@tempa=\box45
+\@tempa=\box46
+\@tempa=\box47
+\@tempa=\box48
+\@tempa=\box49
+\@tempa=\box50
+\c@minrows=\count98
+\c@columnbadness=\count99
+\c@finalcolumnbadness=\count100
+\last@try=\dimen111
+\multicolovershoot=\dimen112
+\multicolundershoot=\dimen113
+\mult@nat@firstbox=\box51
+\colbreak@box=\box52
+\mc@col@check@num=\count101
+)) (D:\MiKTeX\tex/latex/base\fontenc.sty
+Package: fontenc 2018/08/11 v2.0j Standard LaTeX package
+(D:\MiKTeX\tex/latex/base\t1enc.def
+File: t1enc.def 2018/08/11 v2.0j Standard LaTeX file
+LaTeX Font Info:    Redeclaring font encoding T1 on input line 48.
+)) (D:\MiKTeX\tex/latex/psnfss\mathpazo.sty
+Package: mathpazo 2005/04/12 PSNFSS-v9.2a Palatino w/ Pazo Math (D.Puga, WaS) 
+\symupright=\mathgroup4
+) (main.aux)
+\openout1 = `main.aux'.
+
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 12.
+LaTeX Font Info:    ... okay on input line 12.
+LaTeX Font Info:    Trying to load font information for T1+ppl on input line 12
+.
+ (D:\MiKTeX\tex/latex/psnfss\t1ppl.fd
+File: t1ppl.fd 2001/06/04 font definitions for T1/ppl.
+)
+(D:\MiKTeX\tex/context/base/mkii\supp-pdf.mkii
+[Loading MPS to PDF converter (version 2006.09.02).]
+\scratchcounter=\count102
+\scratchdimen=\dimen114
+\scratchbox=\box53
+\nofMPsegments=\count103
+\nofMParguments=\count104
+\everyMPshowfont=\toks19
+\MPscratchCnt=\count105
+\MPscratchDim=\dimen115
+\MPnumerator=\count106
+\makeMPintoPDFobject=\count107
+\everyMPtoPDFconversion=\toks20
+) (D:\MiKTeX\tex/latex/oberdiek\epstopdf-base.sty
+Package: epstopdf-base 2016/05/15 v2.6 Base part for package epstopdf
+
+(D:\MiKTeX\tex/generic/oberdiek\infwarerr.sty
+Package: infwarerr 2016/05/16 v1.4 Providing info/warning/error messages (HO)
+)
+(D:\MiKTeX\tex/latex/oberdiek\grfext.sty
+Package: grfext 2016/05/16 v1.2 Manage graphics extensions (HO)
+
+(D:\MiKTeX\tex/generic/oberdiek\kvdefinekeys.sty
+Package: kvdefinekeys 2016/05/16 v1.4 Define keys (HO)
+
+(D:\MiKTeX\tex/generic/oberdiek\ltxcmds.sty
+Package: ltxcmds 2016/05/16 v1.23 LaTeX kernel commands for general use (HO)
+)))
+(D:\MiKTeX\tex/latex/oberdiek\kvoptions.sty
+Package: kvoptions 2016/05/16 v3.12 Key value format for package options (HO)
+
+(D:\MiKTeX\tex/generic/oberdiek\kvsetkeys.sty
+Package: kvsetkeys 2016/05/16 v1.17 Key value parser (HO)
+
+(D:\MiKTeX\tex/generic/oberdiek\etexcmds.sty
+Package: etexcmds 2016/05/16 v1.6 Avoid name clashes with e-TeX commands (HO)
+)))
+(D:\MiKTeX\tex/latex/pdftexcmds\pdftexcmds.sty
+Package: pdftexcmds 2019/11/24 v0.31 Utility functions of pdfTeX for LuaTeX (HO
+)
+Package pdftexcmds Info: \pdf@primitive is available.
+Package pdftexcmds Info: \pdf@ifprimitive is available.
+Package pdftexcmds Info: \pdfdraftmode found.
+)
+Package epstopdf-base Info: Redefining graphics rule for `.eps' on input line 4
+38.
+Package grfext Info: Graphics extension search list:
+(grfext)             [.pdf,.png,.jpg,.mps,.jpeg,.jbig2,.jb2,.PDF,.PNG,.JPG,.JPE
+G,.JBIG2,.JB2,.eps]
+(grfext)             \AppendGraphicsExtensions on input line 456.
+)
+\big@size=\dimen116
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <24.88> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 31.
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <14.4> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 35.
+ [1
+
+{C:/Users/DELL/AppData/Local/MiKTeX/2.9/pdftex/config/pdftex.map}] (main.toc
+LaTeX Font Info:    Font shape `T1/ppl/bx/n' in size <12> not available
+(Font)              Font shape `T1/ppl/b/n' tried instead on input line 1.
+LaTeX Font Info:    Trying to load font information for OT1+ppl on input line 6
+.
+
+(D:\MiKTeX\tex/latex/psnfss\ot1ppl.fd
+File: ot1ppl.fd 2001/06/04 font definitions for OT1/ppl.
+)
+LaTeX Font Info:    Trying to load font information for OML+zplm on input line 
+6.
+ (D:\MiKTeX\tex/latex/psnfss\omlzplm.fd
+File: omlzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OML/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OMS+zplm on input line 
+6.
+
+(D:\MiKTeX\tex/latex/psnfss\omszplm.fd
+File: omszplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMS/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OMX+zplm on input line 
+6.
+ (D:\MiKTeX\tex/latex/psnfss\omxzplm.fd
+File: omxzplm.fd 2002/09/08 Fontinst v1.914 font definitions for OMX/zplm.
+)
+LaTeX Font Info:    Trying to load font information for OT1+zplm on input line 
+6.
+(D:\MiKTeX\tex/latex/psnfss\ot1zplm.fd
+File: ot1zplm.fd 2002/09/08 Fontinst v1.914 font definitions for OT1/zplm.
+))
+\tf@toc=\write3
+\openout3 = `main.toc'.
+
+ [1] (content.tex
+Overfull \hbox (51.57123pt too wide) in paragraph at lines 8--9
+\T1/ppl/m/n/12 We can trans-fer this dis-abil-ity through tech-no-log-i-cal in-
+no-va-tion.Technology
+ []
+
+[2]
+Overfull \hbox (2.38446pt too wide) in paragraph at lines 18--19
+\T1/ppl/m/n/12 which gen-er-ates high-frequency sound waves and re-ceives it ba
+ck. 
+ []
+
+
+Overfull \hbox (43.17323pt too wide) in paragraph at lines 21--22
+\T1/ppl/m/n/12 pixel static im-ages, and also sup-ports 1080p30, 720p60 and 640
+x480p60/90
+ []
+
+[3]
+<implementation.png, id=17, 474.27188pt x 275.52937pt>
+File: implementation.png Graphic file (type png)
+<use implementation.png>
+Package pdftex.def Info: implementation.png  used on input line 46.
+(pdftex.def)             Requested size: 369.88582pt x 214.89522pt.
+
+Overfull \hbox (24.88582pt too wide) in paragraph at lines 46--47
+[] 
+ []
+
+LaTeX Font Info:    Trying to load font information for OMS+ppl on input line 5
+0.
+(D:\MiKTeX\tex/latex/psnfss\omsppl.fd
+File: omsppl.fd 
+)
+LaTeX Font Info:    Font shape `OMS/ppl/m/n' in size <12> not available
+(Font)              Font shape `OMS/cmsy/m/n' tried instead on input line 50.
+ [4 <./implementation.png>]
+Overfull \hbox (19.21223pt too wide) in paragraph at lines 72--74
+[]\T1/ppl/m/n/12 The au-thor-i-ties can view this in-for-ma-tion and sug-gested
+ changes
+ []
+
+
+Overfull \hbox (8.79645pt too wide) in paragraph at lines 72--74
+\T1/ppl/m/n/12 and de-ter-mine the nec-es-sary ac-tions to be taken in these pl
+aces. 
+ []
+
+[5] [6]
+Overfull \hbox (22.06845pt too wide) in paragraph at lines 100--101
+\T1/ppl/m/n/12 ing Ul-tra-sonic Sen-sors Net-work with Voice Guid-ance, Olakan
+mi
+ []
+
+
+Overfull \hbox (25.48827pt too wide) in paragraph at lines 104--105
+[]\T1/ppl/m/n/12 Blind nav-i-ga-tion sys-tem for vi-su-ally im-paired us-ing w
+indowing-
+ []
+
+
+Overfull \hbox (12.5635pt too wide) in paragraph at lines 106--107
+\T1/ppl/m/n/12 vi-su-ally im-paired peo-ple: VUK  Vi-sion-less sup-port-ing fr
+ame-
+ []
+
+
+Overfull \hbox (22.1889pt too wide) in paragraph at lines 110--111
+\T1/ppl/m/n/12 of En-gi-neer-ing. [10] Smart Stick for Blind Man, Ni-tish Suk
+hija1,
+ []
+
+) [7] (main.aux) ) 
+Here is how much of TeX's memory you used:
+ 2517 strings out of 492450
+ 32944 string characters out of 3138136
+ 99666 words of memory out of 3000000
+ 6815 multiletter control sequences out of 15000+200000
+ 30979 words of font info for 54 fonts, out of 3000000 for 9000
+ 1141 hyphenation exceptions out of 8191
+ 43i,5n,39p,444b,255s stack positions out of 5000i,500n,10000p,200000b,50000s
+{D:/MiKTeX/fonts/enc/dvips/base/8r.enc}<D:/MiKTeX/fonts/type1
+/public/amsfonts/cm/cmsy10.pfb><D:/MiKTeX/fonts/type1/urw/palatino/uplb8a.pfb><
+D:/MiKTeX/fonts/type1/urw/palatino/uplr8a.pfb><D:/MiKTeX/fonts/type1/urw/palati
+no/uplri8a.pfb>
+Output written on main.pdf (8 pages, 194677 bytes).
+PDF statistics:
+ 49 PDF objects out of 1000 (max. 8388607)
+ 0 named destinations out of 1000 (max. 500000)
+ 6 words of extra memory for PDF output out of 10000 (max. 10000000)
+
