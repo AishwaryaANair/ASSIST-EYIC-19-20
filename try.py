@@ -125,9 +125,9 @@ def gpsInit():
             NMEA_buff = (GPGGA_buffer.split(','))               #store comma separated data in buffer
             GPS_Info(NMEA_buff)
             print("lat in degrees:", lat_in_degrees," long in degree: ", long_in_degrees, '\n')
-            #app = firebase.FirebaseApplication('https://assist-42004.firebaseio.com')
-            #result = app.post('ASSIST', {'latitude':str(lat_in_degrees),'longitude':str(long_in_degrees)})
-            #print(result)
+            app = firebase.FirebaseApplication('https://assist-42004.firebaseio.com')
+            result = app.post('ASSIST', {'latitude':str(lat_in_degrees),'longitude':str(long_in_degrees)})
+            print(result)
             
 def distanceInit():
     dist = distance()
@@ -157,12 +157,12 @@ def depthThread():
     depthInit()
     
 def gpsThread():
-    threading.Timer(7, gpsThread).start()
+    threading.Timer(5, gpsThread).start()
     gpsInit()
     
 try:
     if __name__ == '__main__':
-        #Thread(target = gpsThread).start()
+        Thread(target = gpsThread).start()
         Thread(target = distanceThread).start()
         Thread(target = depthThread).start()
         
@@ -181,10 +181,9 @@ except Exception as e:
         depth = distance3()
         print ("Measured Depth = %.1f cm" % depth)
         sleep(0.50)
-        if (dist<=50):
+        if (dist<=50 or depth>=50):
             vibrate()
-        if (depth>=50):
-            vibrate();
+
             
             
             

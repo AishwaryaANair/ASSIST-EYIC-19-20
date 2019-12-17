@@ -14,9 +14,14 @@ GPIO.setmode(GPIO.BCM)
 TRIGGER = 2
 ECHO = 3
 motor = 18
+TRIGGER3 = 24                        #Associate pin 23 to TRIG
+ECHO3 = 16
 GPIO.setup(motor, GPIO.OUT)
 GPIO.setup(TRIGGER, GPIO.OUT)
 GPIO.setup(ECHO, GPIO.IN)
+GPIO.setup(TRIGGER3 ,GPIO.OUT)
+GPIO.setup(ECHO3, GPIO.IN)
+
 
 
 
@@ -127,12 +132,6 @@ except KeyboardInterrupt:       #open current position information in google map
 
 except Exception as e:
     print(e)
-    while True:
-        dist = distance()
-        print ("Measured Distance = %.1f cm" % dist)
-        sleep(0.50)
-        if (dist<=50):
-            vibrate()
 
 
 
