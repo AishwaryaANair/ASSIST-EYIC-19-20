@@ -1,4 +1,3 @@
-#Libraries
 import RPi.GPIO as GPIO
 import time
 import requests
@@ -8,7 +7,9 @@ from threading import Thread
 import serial
 import sys
 from firebase import firebase
-
+import cv2
+from picamera import PiCamera
+from time import sleep
 GPIO.setwarnings(False)
 GPIO.setmode(GPIO.BCM)
 TRIGGER = 2
@@ -131,41 +132,92 @@ def gpsInit():
             
 def distanceInit():
     dist = distance()
-    print("Measured: ",dist)
-    sleep(0.5)
+    print("dist:",dist)
+    #sleep(0.5)
     while (dist<=50):
+        print('distance obs')
         vibrate()
+        sleep(0.2)
         break
             
 def depthInit():
     depth = distance3()
-    print("Measured depth : ",depth)
-    sleep(0.5)
+    print("depth:",depth)
+    #sleep(0.5)
     while (depth>=50):
         vibrate()
+        sleep(0.2)
         break
 
+def id_class_name(class_id, classes):
+    pass
 
-    
+def imageInit():
+
+    classNames = {0: 'background',
+                  1: 'person', 2: 'bicycle', 3: 'car', 4: 'motorcycle', 5: 'airplane', 6: 'bus',
+                  7: 'train', 8: 'truck', 9: 'boat', 10: 'traffic light', 11: 'fire hydrant',
+                  13: 'stop sign'}
+
+
+    camera = PiCamera()
+
+    camera.start_preview()
+    sleep(1)
+
+    camera.capture('image.jpeg')
+    camera.stop_preview()
+    camera.close()
+    # Loading model
+    model = cv2.dnn.readNetFromTensorflow('models/frozen_inference_graph.pb',
+                                          'models/ssd_mobilenet_v2_coco_2018_03_29.pbtxt')
+
+
+    image = cv2.imread("image.jpeg")
+
+    image_height, image_width, _ = image.shape
+
+    model.setInput(cv2.dnn.blobFromImage(image, size=(300, 300), swapRB=True))
+    output = model.forward()
+    # print(output[0,0,:,:].shape)
+     
+
+    for detection in output[0, 0, :, :]:
+        confidence = detection[2]
+        if confidence > .5:
+            class_id = detection[1]
+            for key, value in classNames.items():
+                if class_id == key:
+                    class_name = value
+            print(str(str(class_id) + " " + str(detection[2])  + " " + class_name))
+            box_x = detection[3] * image_width
+            box_y = detection[4] * image_height
+            box_width = detection[5] * image_width
+            box_height = detection[6] * image_height
+            print(class_name)
 
 def distanceThread():
-    threading.Timer(2, distanceThread).start()
+    threading.Timer(1, distanceThread).start()
     distanceInit()
 
 def depthThread():
     threading.Timer(2, depthThread).start()
     depthInit()
-    
+
 def gpsThread():
-    threading.Timer(5, gpsThread).start()
+    threading.Timer(3, gpsThread).start()
     gpsInit()
+
+def imageThread():
+    threading.Timer(5, imageThread).start()
+    imageInit()
     
 try:
     if __name__ == '__main__':
         Thread(target = gpsThread).start()
-        Thread(target = distanceThread).start()
+        Thread(target = distanceThread).start
         Thread(target = depthThread).start()
-        
+        Thread(target = imageThread).start()
         
                                                  #get time, latitude, longitude
 except KeyboardInterrupt:       #open current position information in google map
@@ -183,6 +235,16 @@ except Exception as e:
         sleep(0.50)
         if (dist<=50 or depth>=50):
             vibrate()
+
+
+
+
+
+
+
+
+
+
 
             
             
