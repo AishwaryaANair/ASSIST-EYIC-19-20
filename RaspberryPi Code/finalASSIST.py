@@ -1,3 +1,10 @@
+'''
+Project Name: ASSIST
+Author List: Aishwarya Nair, Shivani Patil, Prithvi Amin, Saily Natekar
+Functions: distance(), distance3(), vibrate(), gpsInit(), GPS_Info(str), convert_to_degrees(str), distaneInit(), depthInit(), imageInit()
+Global Variables: TRIGGER, ECHO, TRIGGER3, ECHO3, motor, gpgga_info, GPGGA_buffer, NMEA_buff, lat_in_degrees, long_in_degrees
+
+'''
 import RPi.GPIO as GPIO
 import time
 import requests
@@ -24,7 +31,15 @@ GPIO.setup(TRIGGER3 ,GPIO.OUT)
 GPIO.setup(ECHO3, GPIO.IN)
 
 
+'''
+Function name: distance()
+input: GPIO pin TRIGGER signal which is connected to Ultrasonic sensor
+output: integer value of distance calculated with ultrasonic sensor (distance)
+Logic: obtains start and stop time of the reflection of ultrasonic waves emitted from the sensor and divides it with the speed of 
+sound to obtain the distance
+Example Call: obstacle_distance = distance()
 
+'''
 def distance():
     
     GPIO.output(TRIGGER, True)
@@ -51,9 +66,16 @@ def distance():
     return distance
 
 
+'''
+Function name: depth()
+input: GPIO pin TRIGGER signal which is connected to Ultrasonic sensor
+output: integer value of depth calculated with ultrasonic sensor (distance)
+Logic: obtains start and stop time of the reflection of ultrasonic waves emitted from the sensor and divides it with the speed of 
+sound to obtain the depth
+Example Call: obstacle_depth = depth()
 
-
-def distance3():
+'''
+def depth():
     
     GPIO.output(TRIGGER3, True)
     
@@ -78,10 +100,40 @@ def distance3():
     distance = (TimeElapsed * 34300) / 2
     return distance
 
+
+'''
+Function name: vibrate()
+input: None
+output: High Signal of GPIO Pin connected to vibration motor
+Logic: GPIO pin connected to the motor is sent a high signal to make the motor vibrate in case of obstacle
+Example Call: vibrate()
+
+'''
+
 def vibrate():
     GPIO.output(motor, True)
     sleep(0.5)
     GPIO.output(motor, False)
+
+gpgga_info = "$GPGGA,"
+ser = serial.Serial ("/dev/ttyAMA0")              #Open port with baud rate
+GPGGA_buffer = 0
+NMEA_buff = 0
+lat_in_degrees = 0
+long_in_degrees = 0
+
+
+'''
+Function name: GPS_Info
+input: NMEA buffer string
+output: lat_in_degrees, long_in_degrees (setting global variables)
+Logic: GPS module sends an NMEA Buffer string to the serial port ttyAMA0.
+It then extracts the NMEA time, latitude and longitude that is sent to convert_to_degrees function to 
+obtain the actual lattitude and longitde values
+Example Call: GPS_Info([19,1283,2383,18383...])
+
+'''
+
 
 def GPS_Info(NMEA_buff):
     global lat_in_degrees
@@ -100,7 +152,15 @@ def GPS_Info(NMEA_buff):
 
 
 
-#convert raw NMEA string into degree decimal format   
+'''
+Function name: convert_to_degrees()
+input: raw value of NMEA coordinates as obtained from GPS_Info
+output: latitude/longitude in degrees
+Logic: convert raw NMEA string into degree decimal format   
+Example Call: convert_to_degrees(18353.2981)
+
+'''
+
 def convert_to_degrees(raw_value):
     decimal_value = raw_value/100.00
     degrees = int(decimal_value)
@@ -109,12 +169,16 @@ def convert_to_degrees(raw_value):
     position = "%.4f" %(position)
     return position
     
-gpgga_info = "$GPGGA,"
-ser = serial.Serial ("/dev/ttyAMA0")              #Open port with baud rate
-GPGGA_buffer = 0
-NMEA_buff = 0
-lat_in_degrees = 0
-long_in_degrees = 0
+
+'''
+Function name: gpsInit()
+input: getting raw serial port data
+output: latitude/longitude in degrees and pushing it to database
+Logic: obtain raw serial buffer data, extract GPGGA info string and NMEA buffer data 
+and sending it to GPS_Info and convert_to_degrees function. The latitude and longitude thus obtained is sent to firebase.
+Example Call: gpsInit()
+
+'''
 
 def gpsInit():
     while True:
@@ -129,17 +193,39 @@ def gpsInit():
             app = firebase.FirebaseApplication('https://assist-42004.firebaseio.com')
             result = app.post('ASSIST', {'latitude':str(lat_in_degrees),'longitude':str(long_in_degrees)})
             print(result)
+
             
+
+'''
+Function name: distanceInit()
+input: value of distance from distance function
+output: None
+Logic: obtain the values of the distance from the nearest obstacle and 
+if the distance is less than 3ft/150 cm indicate with the vibration motor
+Example Call: distanceInit()
+
+'''
 def distanceInit():
     dist = distance()
     print("dist:",dist)
     #sleep(0.5)
-    while (dist<=50):
+    while (dist<=150):
         print('distance obs')
         vibrate()
         sleep(0.2)
         break
-            
+
+
+'''
+Function name: depthInit()
+input: value of depth from depth function
+output: None
+Logic: obtain the values of the depth from the nearest obstacle and 
+if the depth is greater than 50 cm indicate with the vibration motor
+Example Call: depthInit()
+
+'''        
+
 def depthInit():
     depth = distance3()
     print("depth:",depth)
@@ -149,8 +235,17 @@ def depthInit():
         sleep(0.2)
         break
 
-def id_class_name(class_id, classes):
-    pass
+
+'''
+Function name: imageInit()
+input: image from the pi Camera
+output: image detected
+Logic: getting trained class names from the model and reading the model file. 
+Detecting the confidence level from each image and if confidence is greater than certain level then 
+annotate the image. Send the detected class to firebase
+Example Call: imageInit()
+
+'''        
 
 def imageInit():
 
@@ -194,24 +289,64 @@ def imageInit():
             box_y = detection[4] * image_height
             box_width = detection[5] * image_width
             box_height = detection[6] * image_height
+            app = firebase.FirebaseApplication('https://assist-42004.firebaseio.com')
+            result = app.post('ASSIST', {'image':str(class_name)})
             print(class_name)
+
+'''
+Function name: distanceThread()
+input: None
+output: None
+Logic: Initiate the distance thread every second to detect incoming obstacles
+Example Call: Thread(target = distanceThread).start
+
+'''
 
 def distanceThread():
     threading.Timer(1, distanceThread).start()
     distanceInit()
 
+'''
+Function name: depthThread()
+input: None
+output: None
+Logic: Initiate the depth thread every second to detect incoming obstacles
+Example Call: Thread(target = depthThread).start
+
+'''
 def depthThread():
-    threading.Timer(2, depthThread).start()
+    threading.Timer(1, depthThread).start()
     depthInit()
 
+'''
+Function name: gpsThread()
+input: None
+output: None
+Logic: detect the location every 3 seconds 
+Example Call: Thread(target = gpsThread).start
+
+'''
 def gpsThread():
     threading.Timer(3, gpsThread).start()
     gpsInit()
 
+
+'''
+Function name: imageThread()
+input: None
+output: None
+Logic: starting the image processing thread every 3 seconds
+Example Call: Thread(target = imageThread).start
+
+'''
 def imageThread():
-    threading.Timer(5, imageThread).start()
+    threading.Timer(3, imageThread).start()
     imageInit()
     
+'''
+Exceptions and exception handling
+in cases gps and image processing fails to work
+'''
 try:
     if __name__ == '__main__':
         Thread(target = gpsThread).start()
