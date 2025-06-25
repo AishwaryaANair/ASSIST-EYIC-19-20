@@ -1,12 +1,79 @@
-ASSIST Project for E-Yantra Ideas Competition 2019-20
+ASSIST Project for E-Yantra Ideas Competition# ASSIST-EYIC-19-20
 
-Consists of the Application and Doucmentation
+IoT Assist Web Application - A modern PHP-based web application for IoT device management and assistance.
 
-Dependencies: 
-1. XAMPP with sendmail
-2. Python 3
-3. OpenCV
-4. TensorFlow
+## Features
+
+- Secure user authentication
+- IoT device management
+- Emergency response system
+- Voice login capability
+- Modern, responsive UI
+
+## Requirements
+
+- PHP 7.4 or higher
+- MySQL/MariaDB
+- Composer
+- Web server (Apache/Nginx)
+
+## Installation
+
+1. Clone the repository
+2. Install dependencies:
+   ```bash
+   composer install
+   ```
+
+3. Copy `.env.example` to `.env` and configure:
+   ```bash
+   cp .env.example .env
+   ```
+   Update the following variables:
+   - `DB_HOST`
+   - `DB_NAME`
+   - `DB_USER`
+   - `DB_PASS`
+
+4. Set up database:
+   - Create the database
+   - Import the SQL schema
+
+5. Configure web server:
+   - Point web root to `/public`
+   - Enable URL rewriting
+
+## Security
+
+- Uses modern password hashing (bcrypt)
+- SQL injection prevention (PDO prepared statements)
+- CSRF protection
+- XSS prevention
+- Secure session handling
+
+## Directory Structure
+
+```
+src/
+├── Auth/           # Authentication classes
+├── Database/       # Database connection and models
+├── Controllers/    # MVC controllers
+├── Views/          # MVC views
+├── Public/         # Web accessible files
+└── Config/         # Configuration files
+```
+
+## Contributing
+
+1. Fork the repository
+2. Create your feature branch
+3. Commit your changes
+4. Push to the branch
+5. Create a Pull Request
+
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details
 
 To install the application:
 
@@ -16,4 +83,3 @@ To install the application:
 
 To run the code on Raspberry Pi:
 1. Make sure OpenCV and tensorflow are installed correctly and the hardware is connected properly.
-2. Run python finalASSIST.py in the respective directory.
